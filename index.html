@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XimCabinet</title>
+    <style>
+        /* ========== TODO EL CSS VA AQUÍ DENTRO ========== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Navegación minimalista */
+        header {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eaeaea;
+            margin-bottom: 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+        
+        /* Estilo de secciones */
+        section {
+            margin: 3rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            border-left: 2px solid #1a1a1a;
+            padding-left: 0.8rem;
+        }
+        
+        p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 1rem;
+            white-space: pre-line;
+        }
+        
+        .destacado {
+            font-weight: 600;
+        }
+        
+        /* Estilo para la imagen con descripción */
+        .imagen-enlace {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .imagen-enlace img {
+            width: 200px;
+            height: auto;
+            border: 1px solid #eaeaea;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        
+        .imagen-enlace img:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+        
+        .descripcion-imagen {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Estilo para redes sociales */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.6;
+        }
+        
+        /* Estilo para contacto */
+        .contacto-info {
+            margin-top: 1rem;
+        }
+        
+        .contacto-item {
+            margin-bottom: 1rem;
+        }
+        
+        .contacto-label {
+            font-weight: 500;
+            display: inline-block;
+            width: 90px;
+        }
+        
+        .contacto-info a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .contacto-info a:hover {
+            border-bottom-color: #1a1a1a;
+        }
+        
+        /* Botón Back to Top */
+        .back-to-top {
+            text-align: center;
+            margin: 2rem 0 1rem;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            background: transparent;
+            cursor: pointer;
+        }
+        
+        .btn-back:hover {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #eaeaea;
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .imagen-enlace img {
+                width: 150px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contacto-label {
+                width: 80px;
+            }
+        }
+
+        /* Animación suave al hacer scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">XimCabinet</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#contacto">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h1>Xim <span class="destacado">Cabinet</span></h1>
+            <p>You can call me Mike/Miko.</p>
+        </section>
+
+        <section id="about">
+            <h2>about me.</h2>
+            <p>silly boy
+im Michael..you can call me mike/miko/xim
+
+|I'm 16| Multifandom|trans masc-non binary/demiboy| polyamorous|gay|beginner artist|newbie in animation|ADD|Anxiety|Depression|actually receiving help and medication.|
+
+**VENT ART MOSTLY**
+
+DNI if you hate vent artists/users, proshipper/users under 16 y/o (if you are minor than 16, and you watch my content, is under your responsibility), i will put more if something i dont like comes.
+
+english is NOT my first language.</p>
+        </section>
+
+        <!-- Enlace con imagen chiquita y descripción visible -->
+        <div class="imagen-enlace">
+            <a href="https://ximcab.straw.page/" target="_blank">
+                <img src="Comissions sheet.png" alt="comissions info here">
+            </a>
+            <div class="descripcion-imagen">comissions info here (click the image)</div>
+        </div>
+
+        <!-- Sección Social -->
+        <section id="social">
+            <h2>social.</h2>
+            <div class="social-links">
+                <a href="https://x.com/XimiArts" target="_blank">Twitter/X</a>
+                <a href="https://www.tiktok.com/@ximcabinet" target="_blank">TikTok</a>
+                <a href="https://www.youtube.com/@ximcabinet" target="_blank">YouTube</a>
+                <a href="https://www.tumblr.com/blog/ximiarts" target="_blank">Tumblr (XimiArts)</a>
+                <a href="https://www.tumblr.com/ximcabinet" target="_blank">Tumblr (XimCabinet)</a>
+                <div class="descripcion-imagen">(just click them)</div>
+            </div>
+        </section>
+
+        <!-- Sección Contact Me -->
+        <section id="contacto">
+            <h2>contact me.</h2>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <span class="contacto-label">Gmail:</span>
+                    <a href="mailto:ximcabinetcomissions@gmail.com">ximcabinetcomissions@gmail.com</a>
+                </div>
+                <div class="contacto-item">
+                    <span class="contacto-label">Business number:</span>
+                    <a href="tel:+525525529762">55 2552 9762</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botón Back to Top -->
+        <div class="back-to-top">
+            <a href="#" class="btn-back">↑ Back to Top</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 XimCabinet</p>
+    </footer>
+</body>
+</html>
